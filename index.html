@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Web Database</title>
+</head>
+<body>
+  <h1>Wow this is great!!!</h1>
+
+
+  <form id="add-recipies">
+    <input type="text" name="name" placeholder="Recipie name">
+    <input type="number" name="time" placeholder="Recipie cook time">
+    <button>Add Recipie</button>
+  </form>
+  <h2>Find a Recipie by cook time</h2>
+  <form id="find-recipie">
+    <input type="number" name="find-time" placeholder="Cook time">
+    <button>Find</button>
+  </form>
+  <ul id="recipies">
+   
+  </ul>
+
+
+<script>
+var config = {
+  apiKey: "AIzaSyBoq0DLmwVuBvH4KKKTRY0u10SMx6C1WWM",
+  authDomain: "learningdatabase-d8498.firebaseapp.com",
+  projectId: "learningdatabase-d8498",
+  storageBucket: "learningdatabase-d8498.appspot.com",
+  messagingSenderId: "687608618165",
+  appId: "1:687608618165:web:0ff79d8e9ce1e0f52eb2fc",
+  measurementId: "G-M1ML4K0HJX"
+};
+firebase.initializeApp(config);
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true, merge: true})
+</script>
+<script src="app.js"></script>
+
+</body>
+</html>
