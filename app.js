@@ -1,7 +1,9 @@
-
 const recipieList = document.querySelector('#recipies');
 const form = document.querySelector('#add-recipies');
 const find = document.querySelector('#find-recipie');
+const search = document.querySelector('#searchButton');
+const clear = document.querySelector('#clear');
+const show = document.querySelector("#everything");
 
 // create element and render
 
@@ -32,16 +34,39 @@ function renderRecipie(doc){
         db.collection('recipes').doc(id).delete();
     })
 }
+
+function display() {
+    let searchTime = document.querySelector('#times').value;
+
+    console.log(searchTime);
+    db.collection('recipes').where("time", "==", searchTime).get().then((snapshot) => {   //get grabs the data from the database
+    snapshot.docs.forEach(doc => {
+    renderRecipie(doc);
+        })
+    })
+}
+
+function display2() {
+    let searchTime = document.querySelector('#times').value;
+
+    console.log(searchTime);
+    db.collection('recipes').get().then((snapshot) => {   //get grabs the data from the database
+    snapshot.docs.forEach(doc => {
+    renderRecipie(doc);
+        })
+    })
+}
+
 // getting data
-// find.addEventListener('submit', (e) => {
-//     let time = find.find-time.value;
-//     console.log(time);
-//     db.collection('recipes').get().then((snapshot) => {   //get grabs the data from the database
-//     snapshot.docs.forEach(doc => {
-//         renderRecipie(doc);
-//     })
-// })
-// })
+search.addEventListener('click', display);
+
+show.addEventListener('click', display2);
+
+clear.addEventListener('click', (e) => {
+    document.getElementById('recipies').innerHTML = "";
+})
+
+
 // saving data
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -51,19 +76,18 @@ form.addEventListener('submit', (e) => {
     });
     form.name.value = "";
     form.time.value = "";
-
 });
 
 // active listener for data
-db.collection('recipies').orderBy('name').onSnapshot(snapshot => {
-    let changes = snapshot.docChanges();
-    console.log(changes);
-    changes.forEach(change => {
-        if(change.type == 'added'){
-            renderRecipie(change.doc)
-        } else if (change.type == 'removed') {
-            let li = recipieList.querySelector('[data-id' + change.doc.id + ']');
-            recipieList.removeChild(li);
-        }
-    });
-});
+// db.collection('recipies').orderBy('name').onSnapshot(snapshot => {
+//     let changes = snapshot.docChanges();
+//     console.log(changes);
+//     changes.forEach(change => {
+//         if(change.type == 'added'){
+//             renderRecipie(change.doc)
+//         } else if (change.type == 'removed') {
+//             let li = recipieList.querySelector('[data-id' + change.doc.id + ']');
+//             recipieList.removeChild(li);
+//         }
+//     });
+// });
