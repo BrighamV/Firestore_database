@@ -10,25 +10,33 @@
   <title>Web Database</title>
 </head>
 <body>
-  <h1>Wow this is great!!!</h1>
+  <h1>Recipie Database</h1>
 
-
+  <h2>Here you can add a recipie to the database</h2>
   <form id="add-recipies">
     <input type="text" name="name" placeholder="Recipie name">
     <input type="number" name="time" placeholder="Recipie cook time">
     <button id="addButton">Add Recipie</button>
   </form>
+  
   <h2>Find a Recipie by cook time</h2>
+  <h3>Enter in a time and click search to see all the recipies with that time</h3>
   <form id="find-recipie">
     <input type="number" name="times" id="times" placeholder="Cook time" >
-    <div id="searchButton">Search</div>
-    <button id="everything">Show All</button>
-    <button id="clear">Clear</button>
   </form>
+  <div id="searchButton">Search</div>
+  <div id="everything">Show All</div>
   <ul id="recipies">
    
   </ul>
 
+  <h3>This will clear your page</h3>
+  <button id="clear">Clear</button>
+  <h3>Enter the new value then click update on the item you would like to change</h3>
+  <form id="edit-recipies">
+    <input type="text" id="eName" name="eName" placeholder="Recipie new name">
+    <input type="number" id="eTime" name="eTime" placeholder="Recipie new cook time">
+  </form>
 
 <script>
 var config = {
@@ -48,3 +56,7 @@ db.settings({ timestampsInSnapshots: true, merge: true})
 
 </body>
 </html>
+
+<!-- 9:45 - 10:00 -->
+<!-- 10:40 - 11:23 -->
+<!-- 11:31 -  -->

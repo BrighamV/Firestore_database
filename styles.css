@@ -1,11 +1,29 @@
+body{
+    text-align: center;
+    background-color: bisque;
+    margin: 50px;
+}
 h1 {
-    color: blue;
 }
 
 li {
     padding: 20px;
+    list-style-type: none;
 }
 
 span {
     padding-left: 10px;
+}
+
+div {
+    padding: 20px;
+    border-style: solid;
+}
+
+#clear {
+    margin-bottom: 20px;
+}
+
+#times {
+    margin: 20px;
 }
