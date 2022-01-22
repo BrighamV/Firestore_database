@@ -1,24 +1,16 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
 
-{Provide a description the software that you wrote and how it integrates with a Cloud Database.  Describe how to use your program.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of the cloud database.}
-
-This is a simple webpage that has access to a firestore database. It is interactive in that the user can add and delete from the database. The webpage acts as a way to query the data that is stored on googles firestore database that I set up. 
+This is a simple webpage that has access to a firestore database. It is interactive in that the user can perform the CRUD operations from the database. The webpage acts as a way to query the data that is stored on googles firestore database that I set up. All information is imediatly saved in the database. This means that when something is added or deleted it is instantly reflected in firestore. 
 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/Im-6PYTDAoc)
 
 # Cloud Database
 
-{Describe the cloud database you are using.}
+I used Googles firestore for this project.
 
-{Describe the structure of the database that you created.}
-
+The structure has 1 recipes collection. That collection has documents that represent the individual recipes that have name and time fields.
 # Development Environment
 
 * Visual Studio Code
@@ -37,7 +29,5 @@ This is a simple webpage that has access to a firestore database. It is interact
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* The database structure is still pretty primitive. I would love to add authors, instructions, and ingredients to make the website more useful. 
+* The apperance is also lacking. I would love to make this page look nice and invite the user to use it. 
